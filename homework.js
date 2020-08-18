@@ -49,7 +49,7 @@ return (temperature - 32) * 5/9;
 // Celsius temperature as an argument and returns the
 // temperature in Fahrenheit.
 function celsiusToFahrenheit (celsius){
-    return ((celsius * 1.8)  + 32));
+    return celsius * 9/5  + 32;
     }
 
 // 7. Create a function called fahrenheitToKelvin that takes a
@@ -58,18 +58,20 @@ function celsiusToFahrenheit (celsius){
 // fahrenheitToCelsius function.
 // Absolute zero (0 K) is equivalent to −273.15 C.
 // 1 degree Kelvin equals 1 degree Celsius.
-function fahrenheitToKelvin (farenheit) {}
+function fahrenheitToKelvin (f) {
+    return fahrenheitToCelsius(f) + 273.15;
+}
 
 // 8. Create a function called lesser that takes two numbers as
 // arguments and returns the lesser of them. This function should
 // use an if/else statement.
 
-function lesser (number) {
-    if ( number >  any) {
-        return number;
+function lesser (x, y) {
+    if (x > y) {
+        return y;
     }
-    else (number < y);
-        return number;
+    else 
+        return x;
     }
    
 
@@ -85,7 +87,21 @@ function lesser (number) {
 //
 // If any other language code is used, return nothing.
 
-function multigreeting
+function multigreeting (code, name) {
+    if (code === "en") {
+    return "Hello, " + name + "!"
+    } else if (code === "es") {
+        return "!Hola, " + name + "!"
+    } else if (code === "fr") {
+        return "Bonjour, " + name + "!"
+    } else if (code === "eo") {
+        return "Saluton, " + name + "!"
+    } 
+}
+
+    
+
+
 
 // 10. The greatest common divisor (https://en.wikipedia.org/wiki/Greatest_common_divisor)
 // is the largest integer that, given two other integers, can be divided into them. For
@@ -113,3 +129,22 @@ function multigreeting
 
 // Write a function called gcd that takes two arguments and returns the greatest common
 // divisor using the instructions above.
+function gcd (a, b) {
+    let d=0;
+    while (isEven(a) && isEven(b)) {
+        a = a/2
+        b = b/2
+        d = d+1
+    }
+    while (a !== b) {
+        if (isEven(a)) {
+            a = a/2
+        }else if (isEven(b)) {
+            b = b/2
+        } else if (a>b) {
+            a = (a-b) / 2
+        }
+        else b = (b-a) / 2
+
+    }
+}
